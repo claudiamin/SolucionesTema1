@@ -214,10 +214,26 @@ car::qqPlot(log(b.w.a2))
     b.  Uno de los elementos de la lista es un matriz de caracteres. Muestra por pantalla los 5 primeros elementos de esta matriz usando la función **head**.
     c.  Determina el número de librerías que tienes instaladas.
 
-    ```{r}
+```{r}
+    
+libReturn<-library()
+    
+#es una lista de length 3
+    
+#b)
 
 
+#Utilizando la función head
+head(libReturn$results, n=5L)
 
+# "abind"  "askpass"     "assertthat" "backports"   "base64enc" 
+
+#c)
+
+length(libReturn$results)
+    
+
+#tengo 606 librerias
 
 
 
@@ -235,6 +251,8 @@ car::qqPlot(log(b.w.a2))
     d.  Utiliza la función **summary**, sobre **cabbages** y **Chile** y observa como, además de otros estadísticos, también devuelve el número de valores perdidos de cada variable.
 
 ```{r}
+library(MASS)
+
 
 
 
