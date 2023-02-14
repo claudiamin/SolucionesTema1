@@ -276,7 +276,7 @@ any(is.na(Chile))
 
 colSums(sapply(Chile,is.na))
 
-
+#hay 1 na en age 11 en education 98 en income 17 en statusquo y 168 en vote
 
 
 
