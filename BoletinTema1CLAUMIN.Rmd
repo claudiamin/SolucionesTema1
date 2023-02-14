@@ -93,17 +93,39 @@ c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
 
+library(robustbase)
+library(MASS)
+#a) Miramos sus características
+A <- MASS::mammals
 
+B <- robustbase::Animals2
 
+#b)
+mam <- A
 
+#Primero estudiamos el conjunto de datos mammals
+dim(mam)
+#la dimensión es 62 filas por dos columnas
+head(mam)
+tail(mam)
+str(mam)
 
+#Segundo estudiamos el conjunto de datos Animals2
 
+ani <-B
 
+dim(ani)
+#tiene una dimension de unas 65 filas y 2 columnas
+head(ani)
+tail(ani)
+str(ani)
 
+#c)
 
-
-
-
+rownames(mam)
+rownames(ani)
+colnames(mam)
+colnames(mam)
 
 
 
@@ -115,8 +137,8 @@ d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los 
 
 ```{r}
 
-
-
+commonAnimals <- intersect(ani,mam)
+dim(commonAnimals)
 
 
 
@@ -127,7 +149,9 @@ e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. �
 ```{r}
 
 
+setdiff(ani,mam)
 
+#son tres y son dinosaurios
 
 
 
