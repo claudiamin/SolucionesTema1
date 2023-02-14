@@ -252,6 +252,29 @@ length(libReturn$results)
 
 ```{r}
 library(MASS)
+library(car)
+
+cab <- MASS::cabbages
+
+dim(cab)
+str(cab)
+head(cab)
+summary(cab)
+
+#b)
+
+any(is.na(cab$Cult))
+any(is.na(cab$Date))
+any(is.na(cab$HeadWt))
+any(is.na(cab$VitC))
+
+#no hay na
+
+#c)
+
+any(is.na(Chile))
+
+colSums(sapply(Chile,is.na))
 
 
 
