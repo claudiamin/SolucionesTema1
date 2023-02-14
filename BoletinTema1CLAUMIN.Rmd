@@ -149,9 +149,16 @@ e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. �
 ```{r}
 
 
-setdiff(ani,mam)
+ani.no <- setdiff(rownames(ani),rownames(mam))
+ani.no
 
-#son tres y son dinosaurios
+#son 7 Son en su mayoría dinosaurios
+
+ani.no2 <- setdiff(rownames(mam),rownames(ani))
+ani.no2
+#son 4 y son mamíferos
+
+
 
 
 
@@ -162,7 +169,8 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 ```{r}
 
 
-
+#"Artic ground squirrel""Arctic ground squirrel"
+#hay algunos que estan mal escritos y hacen la diferencia entre ambos conjuntos.
 
 
 
@@ -177,8 +185,27 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 2.  La funcion **qqPlot** del paquete **car** puede ser utilizada para determinar gráficamente si una serie de puntos siguen una distribución de datos Gaussiana. Si las muestras están dentro de las líneas discontinuas podemos indicar que siguen una distribución Gaussiana con un 95 % de confianza. Utilizando esta función representa el logaritmo neperiano (**log**) del peso del cerebro (**brain weigths**) del registro de datos **mammals** del paquete **MASS** y conjunto de datos **Animals2** de la librería **robustbase**. ¿Presentan el mismo comportamiento ?.¿Podríamos decir que siguen una distribución Gaussiana ?
 
 ```{r}
+library(car)
+library(MASS)
+library(robustbase)
 
 
+A_1 <- MASS::mammals
+A_2 <- robustbase::Animals2
+#Primero lo hacemos con los mamíferos
+b.w <- A_1$brain
+
+
+car::qqPlot(log(b.w))
+#Ahora con el conjunto de Animals2
+
+b.w.a2 <- A_2$brain
+
+car::qqPlot(log(b.w.a2))
+
+#No presentan la misma distribución ya que la primera tiene una pendiente más pronunciada
+
+#Creo que ambas siguen una distribución Gaussiana
 ```
 
 3.  La función **library** sin argumentos abre una ventana y muestra las librerías que han sido instaladas.
