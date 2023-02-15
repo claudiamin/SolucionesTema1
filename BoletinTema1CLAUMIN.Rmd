@@ -329,8 +329,12 @@ car::qqPlot(log(cV))
 ```{r}
 library(MASS)
 MASS::cabbages
-cabbages$VitC
-cabbages$Cult
+#determinamos los diferentes tipos de calabaza que hay
+levels(cabbages$Cult)
+
+#representamos ambos
+hist(cabbages$VitC[cabbages$Cult=="c39"],col="red")
+hist(cabbages$VitC[cabbages$Cult=="c52"],col="cyan")   
 
 ```
 
