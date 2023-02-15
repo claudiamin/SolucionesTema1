@@ -334,7 +334,7 @@ levels(cabbages$Cult)
 
 #representamos ambos
 hist(cabbages$VitC[cabbages$Cult=="c39"],col="red")
-hist(cabbages$VitC[cabbages$Cult=="c52"],col="cyan")   
+hist(cabbages$VitC[cabbages$Cult=="c52"],col="cyan",add=TRUE)   
 
 ```
 
