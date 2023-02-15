@@ -231,9 +231,10 @@ head(libReturn$results, n=5L)
 #c)
 
 length(libReturn$results)
-    
+#606    
+dim(libReturn$results)
+#Tengo unas 202 librerias
 
-#tengo 606 librerias
 
 
 
@@ -308,8 +309,16 @@ colSums(sapply(Chile,is.na))
 5.  Muchas pruebas estadísticas suponen que los datos siguen una distribución Gaussiana. Utiliza la aproximación visual proporcionada por **qqPlot** para determinar si podemos asumir que las variables **HeadWt** y **VitC** del conjunto **cabbages** verifican esta condición.
 
 ```{r}
+library(car)
+library(MASS)
+
+c<-MASS::cabbages
+cH<- c$HeadWt
+cV<-c$VitC
 
 
+car::qqPlot(log(cH))
+car::qqPlot(log(cV))
 
 
 
