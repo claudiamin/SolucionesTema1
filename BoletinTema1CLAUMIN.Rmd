@@ -374,6 +374,33 @@ b.  Repite el apartado anterior, pero obteniendo un modelo para cada una de las 
 
 ```{r}
 
+#a)
+#representación 
+library(MASS)
+plot(cabbages$VitC,cabbages$HeadWt,pch = c(6,16)[cabbages$HeadWt])
+legend(x="topright",legend=c("VitC","HeadWt"), pch=c(6,16))
+
+#creamos un modelo
+Model3 <- lm(VitC ~ HeadWt, data = cabbages)
+abline(Model3,lty=4,col="red")
+#b)
+#representación de modelo de la calabaza 
+
+plot(cabbages$HeadWt,cabbages$Cult,pch =c(2,4)[cabbages$Cult])
+plot(cabbages$VitC,cabbages$Cult,pch =c(6,16)[cabbages$Cult])
+
+Model4 <- lm(Cult ~VitC ,data=cabbages,subset=which(Cult=="c39"))
+Model6 <- lm(Cult ~VitC ,data=cabbages,subset=which(Cult=="c52"))
+abline(Model4,lty=3)
+abline(Model6,lty=3)
+
+
+Model5 <- lm(Cult ~HeadWt ,data=cabbages,subset=which(Cult=="c39"))
+Model7 <- lm(Cult ~HeadWt ,data=cabbages,subset=which(Cult=="c52"))
+
+abline(Model5,lty=1)
+abline(Model7,lty=1)
+
 
 
 
